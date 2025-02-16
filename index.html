@@ -2,6 +2,32 @@
 <html>
 <head>
     <title>SOP & CORS Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <h1>Same-Origin Policy and CORS Demo</h1>
@@ -11,9 +37,21 @@
 
     <script>
         function sameOriginRequest() {
-            fetch("http://127.0.0.1:5500/data")
-                .then(response => response.json())
-                .then(data => alert("Same-Origin Response: " + data.message))
+            fetch("http://127.0.0.1:5500/data.html")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    try {
+                        const jsonData = JSON.parse(data);
+                        alert("Same-Origin Response: " + jsonData.message);
+                    } catch (e) {
+                        alert("Received non-JSON response: " + data);
+                    }
+                })
                 .catch(error => alert("Error: " + error));
         }
 

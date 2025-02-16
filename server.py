@@ -4,11 +4,11 @@ from flask_cors import CORS
 app = Flask(__name__)
 
 # Enable CORS for all routes
-CORS(app, resources={r"/*": {"origins": "*"}})
+#CORS(app, resources={r"/*": {"origins": "*"}})
 
-@app.route('/data')
-def no_cors_data():
-    return jsonify({"message": "This is a same-origin request!"})
+@app.route('/data', methods=['GET'])
+def data():
+    return jsonify(message="Data Sent")
 
 @app.route('/cors-data')
 def cors_data():
