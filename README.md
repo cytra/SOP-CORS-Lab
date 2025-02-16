@@ -33,7 +33,7 @@ Follow these steps to set up and run the lab:
 
 3. **Start Server 1 (CORS-Enabled Server)**
 
-   Execute the following command to start Server 1 on Port 5000:
+   In Terminal 1, execute the following command to start Server 1 on Port 5000:
 
    ```bash
    python server.py
@@ -43,7 +43,7 @@ Follow these steps to set up and run the lab:
 
 4. **Start Server 2 (Static File Server)**
 
-   Execute the following command to start Server 2 on Port 5500:
+   In Terminal 2, execute the following command to start Server 2 on Port 5500:
 
    ```bash
    python -m http.server 5500
@@ -68,14 +68,3 @@ Follow these steps to set up and run the lab:
 - `data.html`: A static HTML file served by Server 2.
 - `README.md`: This file, providing setup instructions and project details.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
-
-## Contact
-
-For any questions or feedback, please contact [Your Name] at [Your Email].
