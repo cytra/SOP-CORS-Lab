@@ -56,7 +56,7 @@ Follow these steps to set up and run the lab:
    Open your web browser and navigate to:
 
    ```
-   http://127.0.0.1:5500/index.html
+   http://127.0.0.1:5500/
    ```
 
    Use the buttons on the page to test same-origin and cross-origin requests.
