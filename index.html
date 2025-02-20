@@ -33,7 +33,6 @@
     <h1>Same-Origin Policy and CORS Demo</h1>
     <button onclick="sameOriginRequest()">Same-Origin Request</button>
     <button onclick="crossOriginRequest()">Cross-Origin Request</button>
-    <button onclick="corsEnabledRequest()">CORS-Enabled Request</button>
 
     <script>
         function sameOriginRequest() {
@@ -60,13 +59,6 @@
                 .then(response => response.json())
                 .then(data => alert("Cross-Origin Response: " + data.message))
                 .catch(error => alert("Blocked by SOP! " + error));
-        }
-
-        function corsEnabledRequest() {
-            fetch("http://127.0.0.1:5000/cors-data") // Allowed by CORS
-                .then(response => response.json())
-                .then(data => alert("CORS Response: " + data.message))
-                .catch(error => alert("Error: " + error));
         }
     </script>
 </body>
