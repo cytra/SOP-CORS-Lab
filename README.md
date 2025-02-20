@@ -8,7 +8,7 @@ This project demonstrates the concepts of Same-Origin Policy (SOP) and Cross-Ori
 - Flask library for running the server. You can install it using pip:
 
   ```bash
-  pip install Flask
+  pip install flask flask_cors
   ```
 
 ## Setup Instructions
